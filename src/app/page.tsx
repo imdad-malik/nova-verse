@@ -193,7 +193,7 @@ export default function Home() {
                 </div>
                 <div className="h-40 overflow-y-auto">
                   <p className="text-sm text-gray-300">
-                    <span className="text-gray-500">> </span>
+                    <span className="text-gray-500"> </span>
                     The impact of artificial intelligence on modern education is profound and multifaceted. AI-powered tools are revolutionizing how students learn by providing personalized learning experiences tailored to individual needs and learning styles...
                   </p>
                   <div className="flex mt-4">
