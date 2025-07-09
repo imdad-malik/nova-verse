@@ -1,19 +1,21 @@
 // src/app/blogs/[slug]/page.tsx
 import type { Metadata } from 'next';
 
-type Props = {
-  params: { slug: string };
+type PageParams = {
+  slug: string;
 };
 
-// ✅ Correct: Explicitly return Promise<Metadata>
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+type PageProps = {
+  params: PageParams;
+  searchParams?: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   return {
-    title: `Blog Post: ${params.slug}`,
-    description: `This is the blog post for ${params.slug}`,
-    // ...other metadata fields
+    title: `Post: ${params.slug}`,
   };
 }
 
-export default function Page({ params }: Props) {
-  return <div>Blog Post: {params.slug}</div>;
+export default function Page({ params }: PageProps) {
+  return <div>{params.slug}</div>;
 }
