@@ -1,23 +1,28 @@
+"use client";
+
+import Link from 'next/link';
+
 export const metadata = {
-  title: 'Home | TechNovaVista',
-  description: 'TechNovaVista - Tech, AI & SEO content hub.',
+  title: 'Blogs | TechNovaVista',
+  description: 'Browse articles about AI tools, SEO, and SaaS.',
 };
 
-export default function HomePage() {
+export default function BlogsPage() {
   return (
-    <section className="text-center py-16 px-4">
-      <h1 className="text-4xl font-bold text-blue-700">Welcome to TechNovaVista</h1>
-      <p className="mt-4 text-lg text-gray-700">
-        Discover the latest in AI tools, SEO tips, and SaaS guides for students & freelancers.
-      </p>
-      <div className="mt-6 space-x-4">
-        <a href="/blogs" className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">
-          Read Blogs
-        </a>
-        <a href="/about" className="text-blue-600 hover:underline">
-          Learn About Us
-        </a>
-      </div>
+    <section className="py-16 px-4">
+      <h1 className="text-3xl font-bold text-blue-700 mb-6">Latest Articles</h1>
+      <ul className="space-y-4">
+        <li>
+          <Link href="/blogs/ai-tools-for-students" className="text-blue-600 hover:underline text-lg">
+            🔍 AI Tools for Students
+          </Link>
+        </li>
+        <li>
+          <Link href="/blogs/freelancer-saas-guide" className="text-blue-600 hover:underline text-lg">
+            💼 SaaS Tools for Freelancers
+          </Link>
+        </li>
+      </ul>
     </section>
   );
 }
