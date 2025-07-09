@@ -1,25 +1,25 @@
 // src/app/blogs/[slug]/page.tsx
 
-type Props = {
+import { Metadata } from "next";
+
+interface BlogPageProps {
   params: {
     slug: string;
   };
+}
+
+export const generateMetadata = ({ params }: BlogPageProps): Metadata => {
+  return {
+    title: `Blog - ${params.slug}`,
+    description: `Read the blog titled ${params.slug}`,
+  };
 };
 
-export default async function BlogPage({ params }: Props) {
+export default function BlogPage({ params }: BlogPageProps) {
   const { slug } = params;
-
-  // In real case, you could fetch blog content using slug here
-  const fakeContent = `
-    This is a blog post with the slug: "${slug}".
-    
-    You can now style this content using Tailwind Typography plugin.
-  `;
 
   return (
     <div className="prose max-w-3xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold text-blue-700">Blog: {slug}</h1>
-      <p>{fakeContent}</p>
-    </div>
-  );
-}
+      <h1 className="text-3xl font-bold text-blue-700">📝 Blog: {slug}</h1>
+      <p>This is a blog post page for the slug: <strong>{slug}</strong>.</p>
+      <p>You're now using correct TypeScript types with Tailwind Typography 🎉</p>
