@@ -1,19 +1,19 @@
 // src/app/blogs/[slug]/page.tsx
+import type { Metadata } from 'next';
 
-type Params = {
-  params: {
-    slug: string;
-  };
+type Props = {
+  params: { slug: string };
 };
 
-export default function BlogPage({ params }: Params) {
-  const { slug } = params;
+// ✅ Correct: Explicitly return Promise<Metadata>
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  return {
+    title: `Blog Post: ${params.slug}`,
+    description: `This is the blog post for ${params.slug}`,
+    // ...other metadata fields
+  };
+}
 
-  return (
-    <div className="prose max-w-3xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold text-blue-700">📝 Blog: {slug}</h1>
-      <p>This is a dynamic blog post route working properly now!</p>
-      <p>You're viewing the blog for: <strong>{slug}</strong></p>
-    </div>
-  );
+export default function Page({ params }: Props) {
+  return <div>Blog Post: {params.slug}</div>;
 }
