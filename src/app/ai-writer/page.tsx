@@ -23,11 +23,10 @@ export default function AIWriterPage() {
 
       const data = await response.json();
       setResult(data.result);
-    } catch (err) {
-      setResult("❌ Failed to generate blog. Please try again.");
-    } finally {
-      setLoading(false);
-    }
+    } catch {
+  setResult("❌ Failed to generate blog. Please try again.");
+}
+
   };
 
   return (
