@@ -1,38 +1,21 @@
-import { NextResponse } from "next/server";
-import { Configuration, OpenAIApi } from "openai";
+import { NextResponse } from 'next/server';
+import OpenAI from 'openai';
 
-const configuration = new Configuration({
+const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-const openai = new OpenAIApi(configuration);
-
 export async function POST(req: Request) {
-  try {
-    const { prompt } = await req.json();
+  const { prompt } = await req.json();
 
-    if (!prompt) {
-      return NextResponse.json({ result: "Missing prompt" }, { status: 400 });
-    }
+  const chat = await openai.chat.completions.create({
+    model: 'gpt-3.5-turbo',
+    messages: [
+      { role: 'system', content: 'You are a helpful SEO blog writer.' },
+      { role: 'user', content: prompt }
+    ],
+    temperature: 0.7,
+  });
 
-    const response = await openai.createChatCompletion({
-      model: "gpt-4",
-      messages: [
-        { role: "system", content: "You are a professional blog writer." },
-        { role: "user", content: `Write a detailed blog post about: ${prompt}` },
-      ],
-      temperature: 0.7,
-      max_tokens: 800,
-    });
-
-    const blogContent = response.data.choices[0].message?.content;
-
-    return NextResponse.json({ result: blogContent });
-  } catch (error) {
-    console.error("OpenAI API error:", error);
-    return NextResponse.json(
-      { result: "Error generating content. Please try again." },
-      { status: 500 }
-    );
-  }
+  return NextResponse.json({ result: chat.choices[0].message.content });
 }
