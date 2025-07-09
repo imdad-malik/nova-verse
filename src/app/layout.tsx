@@ -1,5 +1,5 @@
-// src/app/layout.tsx
 import './globals.css';
+
 import Link from 'next/link';
 
 export const metadata = {
@@ -10,18 +10,23 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>
-        <header>
-          <nav>
-            <Link href="/">Home</Link> | 
-            <Link href="/blogs">Blogs</Link> | 
-            <Link href="/about">About</Link> | 
-            <Link href="/contact">Contact</Link>
+      <body className="bg-gray-100 text-gray-900 font-sans">
+        <header className="bg-white shadow p-4 sticky top-0 z-50">
+          <nav className="flex justify-between max-w-6xl mx-auto">
+            <div className="text-xl font-bold">TechNovaVista</div>
+            <div className="space-x-4">
+              <Link href="/" className="hover:text-blue-600">Home</Link>
+              <Link href="/blogs" className="hover:text-blue-600">Blogs</Link>
+              <Link href="/about" className="hover:text-blue-600">About</Link>
+              <Link href="/contact" className="hover:text-blue-600">Contact</Link>
+            </div>
           </nav>
         </header>
-        <main>{children}</main>
-        <footer>
-          <p>© 2025 TechNovaVista</p>
+        <main className="max-w-4xl mx-auto mt-6 px-4">
+          {children}
+        </main>
+        <footer className="text-center mt-10 py-4 border-t text-sm">
+          &copy; {new Date().getFullYear()} TechNovaVista
         </footer>
       </body>
     </html>
