@@ -1,3 +1,5 @@
+"use client"; // ⬅️ REQUIRED for client components
+
 import { useState } from "react";
 
 export default function AIWriterPage() {
