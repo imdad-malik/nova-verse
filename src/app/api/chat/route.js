@@ -4,7 +4,7 @@ export async function POST(req) {
   try {
     const { message } = await req.json();
 
-    const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+    const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${process.env.OPENROUTER_API_KEY}`,
@@ -13,19 +13,19 @@ export async function POST(req) {
       body: JSON.stringify({
         model: "mistralai/mistral-7b-instruct",
         messages: [
-          { role: "system", content: "You are TechNova AI, a friendly, multilingual assistant. Respond in a helpful, human tone." },
-          { role: "user", content: message }
+          { role: "system", content: "You are TechNova AI, a friendly assistant." },
+          { role: "user", content: message },
         ],
       }),
     });
 
-    const data = await res.json();
+    const data = await response.json();
 
-    const reply = data?.choices?.[0]?.message?.content || "No response.";
-
-    return NextResponse.json({ reply });
+    return NextResponse.json({
+      reply: data.choices?.[0]?.message?.content || "No response.",
+    });
   } catch (error) {
-    console.error("OpenRouter error:", error);
+    console.error("API Error:", error);
     return NextResponse.json({ reply: "⚠️ Could not connect to AI server." });
   }
 }
