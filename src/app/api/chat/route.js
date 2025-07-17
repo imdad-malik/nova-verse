@@ -1,6 +1,3 @@
-// /app/api/chat/route.js
-export const runtime = "nodejs";
-
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
@@ -16,7 +13,7 @@ export async function POST(req) {
       body: JSON.stringify({
         model: "mistralai/mistral-7b-instruct",
         messages: [
-          { role: "system", content: "You are TechNova AI, a helpful assistant. Please respond in a human tone, and if the user says 'hi' or introduces themselves, reply nicely instead of jumping directly to SEO help." },
+          { role: "system", content: "You are TechNova AI, a friendly, multilingual assistant. Respond in a helpful, human tone." },
           { role: "user", content: message }
         ]
       })
@@ -28,6 +25,6 @@ export async function POST(req) {
     return NextResponse.json({ reply });
   } catch (error) {
     console.error("OpenRouter error:", error);
-    return NextResponse.json({ reply: "⚠️ Could not connect." });
+    return NextResponse.json({ reply: "⚠️ Could not connect to AI server." });
   }
 }
