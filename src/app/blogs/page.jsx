@@ -1,0 +1,107 @@
+"use client";
+import React from "react";
+
+// Placeholder thumbnails (replace with real image URLs)
+const blogs = [
+  {
+    id: 1,
+    title: "How AI is Transforming SEO for Students",
+    excerpt:
+      "Explore how AI tools help students automate research, optimize content, and rank faster in search engines.",
+    image: "/thumbnails/ai-seo-students.jpg",
+    link: "/blogs/ai-seo-for-students",
+  },
+  {
+    id: 2,
+    title: "Top AI Tools for Freelancers in 2025",
+    excerpt:
+      "Discover must-have AI tools for freelancers in content writing, marketing, and SEO automation.",
+    image: "/thumbnails/ai-tools-freelancers.jpg",
+    link: "/blogs/ai-tools-for-freelancers",
+  },
+  {
+    id: 3,
+    title: "GEO & AEO: AI’s Role in Search Localization",
+    excerpt:
+      "Learn how AI is improving geographic and answer engine optimization with smart localization.",
+    image: "/thumbnails/geo-aeo.jpg",
+    link: "/blogs/geo-aeo-ai-guide",
+  },
+  {
+    id: 4,
+    title: "AI in SaaS SEO: Strategies for Startups",
+    excerpt:
+      "From keyword automation to smart content clusters — how SaaS companies are winning SEO using AI.",
+    image: "/thumbnails/saas-ai-seo.jpg",
+    link: "/blogs/ai-seo-for-saas",
+  },
+];
+
+// Get current UTC date & time formatted
+const getUTCTime = () => {
+  const now = new Date();
+  return new Intl.DateTimeFormat("en-US", {
+    timeZone: "UTC",
+    dateStyle: "medium",
+    timeStyle: "short",
+    hour12: true,
+  }).format(now);
+};
+
+export default function BlogsPage() {
+  const globalDateTime = getUTCTime();
+
+  return (
+    <main className="min-h-screen bg-gray-50 dark:bg-[#0b0b0f] text-gray-900 dark:text-white py-16 px-4 transition-colors duration-300">
+      <div className="max-w-7xl mx-auto">
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-center bg-gradient-to-r from-cyan-500 via-purple-500 to-yellow-400 text-transparent bg-clip-text mb-4 animate-fade-in">
+          AI SEO Articles for Students & Freelancers
+        </h1>
+        <p className="text-center text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-8">
+          Explore the future of AI-powered content — fresh, smart, and optimized daily.
+        </p>
+        <hr className="border-t border-gray-300 dark:border-white/10 mb-8 w-1/3 mx-auto" />
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {blogs.map((blog, index) => (
+            <div
+              key={blog.id}
+              className="flex flex-col bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl shadow-md hover:shadow-xl transform transition-transform duration-500 hover:-translate-y-1 overflow-hidden animate-fade-in"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              {/* Thumbnail */}
+              <img
+                src={blog.image}
+                alt={blog.title}
+                className="w-full h-48 sm:h-40 object-cover"
+              />
+              <div className="p-6 flex flex-col justify-between flex-grow">
+                {/* Date & Time */}
+                <p className="text-sm font-medium text-cyan-600 dark:text-cyan-300 mb-1">
+                  {globalDateTime}
+                </p>
+                {/* Title */}
+                <h2 className="text-lg font-bold mb-2 line-clamp-2">
+                  {blog.title}
+                </h2>
+                {/* Excerpt */}
+                <p className="text-sm text-gray-700 dark:text-white/80 mb-4 line-clamp-3">
+                  {blog.excerpt}
+                </p>
+                {/* Read More Button */}
+                <div className="w-full flex justify-center">
+                  <a
+                    href={blog.link}
+                    className="inline-block px-5 py-2 text-sm font-semibold text-white bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg hover:from-purple-600 hover:to-blue-500 transition-all duration-300 text-center"
+                  >
+                    Read More
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </main>
+  );
+}
