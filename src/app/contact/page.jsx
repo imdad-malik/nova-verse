@@ -149,9 +149,10 @@ const Contact = () => {
               ></textarea>
 
               <ReCAPTCHA
-              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}  // 6LenyoYrAAAAAKmF5reF1qOB5sNqsKiADPtGqhGB
-              ref={recaptchaRef}
-              onChange={handleCaptchaChange}
+                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                onChange={(value) => setCaptchaValue(value)}
+                ref={recaptchaRef}
+                className="mt-4"
               />
 
               <button
