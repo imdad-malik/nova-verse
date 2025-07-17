@@ -158,11 +158,10 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className={`w-full ${
-                  loading
+                className={`w-full ${loading
                     ? "bg-gray-400"
                     : "bg-gradient-to-r from-blue-600 to-purple-600"
-                } text-white font-semibold py-3 rounded-xl hover:scale-105 transition-transform`}
+                  } text-white font-semibold py-3 rounded-xl hover:scale-105 transition-transform`}
               >
                 {loading ? "Sending..." : "Send Message"}
               </button>
