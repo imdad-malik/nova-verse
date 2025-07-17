@@ -1,4 +1,6 @@
 // /app/api/chat/route.js
+export const runtime = "nodejs";
+
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
