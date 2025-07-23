@@ -183,7 +183,7 @@ export default function Home() {
               {[
                 {
                   title: "Basic Plan",
-                  price: "$49",
+                  price: "$350",
                   features: [
                     "Up to 10 AI-optimized Keywords",
                     "On-Page Optimization",
@@ -194,7 +194,7 @@ export default function Home() {
                 },
                 {
                   title: "Standard Plan",
-                  price: "$99",
+                  price: "$699",
                   features: [
                     "30 AI-Enhanced Keywords",
                     "Technical & On-Page SEO",
@@ -205,7 +205,7 @@ export default function Home() {
                 },
                 {
                   title: "Premium Plan",
-                  price: "$199",
+                  price: "$1,199",
                   features: [
                     "Unlimited AI Keyword Research",
                     "Full Technical, On & Off-Page SEO",
