@@ -1,4 +1,5 @@
-// src/app/blogsposts/[slug]/page.jsx
+export const dynamicParams = false;
+
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -10,6 +11,7 @@ import remarkRehype from "remark-rehype";
 import rehypeRaw from "rehype-raw";
 import rehypeStringify from "rehype-stringify";
 import BlogPostClient from "@/components/ui/BlogPostClient";
+
 
 export async function generateStaticParams() {
   const postsDir = path.join(process.cwd(), "src/content");

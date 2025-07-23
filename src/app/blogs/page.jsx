@@ -4,6 +4,7 @@ import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
 
 const blogs = [
+  //1st Article on dated 22 july 2025 ai transforming SEO
   {
     id: 1,
     title: "How AI is Transforming SEO for Students",
@@ -13,6 +14,15 @@ const blogs = [
     image: "https://images.pexels.com/photos/6153343/pexels-photo-6153343.jpeg",
   },
   
+ //2nd Article on dated 23 july 2025 AI Powered SEO
+  {
+    id: 2,
+    title: "AI SEO & Ecommerce Marketing Guide 2025 | Expert Strategies",
+    slug: "ai-seo-ecommerce-2025",
+    excerpt:
+      "Discover cutting-edge AI SEO tools and ecommerce marketing strategies that drive results. Expert insights on search optimization, PPC, and digital growth tactics.",
+    image: "https://images.pexels.com/photos/5614119/pexels-photo-5614119.jpeg",
+  },
 ];
 
 export default function BlogsPage() {

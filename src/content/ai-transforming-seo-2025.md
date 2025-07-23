@@ -210,7 +210,7 @@ Stay connected with me on multiple platforms for the latest tips, SEO insights, 
 
 ## 🔗 Internal Linking Placeholder
 
-> [Read more: How to Build AI SEO Strategy for E-Commerce Stores](/blogposts/ai-seo-strategy-ecommerce)
+> [Read more: How to Build AI SEO Strategy for E-Commerce Stores](/blogsposts/ai-seo-ecommerce-2025)
 
 ---
 
