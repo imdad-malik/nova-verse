@@ -30,7 +30,7 @@ author: "Imdad Malik | TechNovaVista"
   "dateModified": "2025-07-23",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://technovavista.com/ai-seo-ecommerce-marketing-strategies-2025"
+    "@id": "https://article.technovavista.com/blogsposts/ai-seo-ecommerce-2025"
   }
 }
 </script>
@@ -482,7 +482,7 @@ Most modern **ecommerce marketing** platforms like Shopify, WooCommerce, and Mag
 
 ## 🔗 Internal Linking Strategy
 
-> [Explore Advanced E-Commerce SEO Techniques](/blogposts/advanced-ecommerce-seo-techniques)  
+> [Explore Advanced E-Commerce SEO Techniques](/blogsposts/e-commerce-seo-marketing)  
 > [Complete Guide to Google Ads Automation](/blogposts/google-ads-automation-guide)  
 > [AI Content Creation for Digital Marketing](/blogposts/ai-content-creation-marketing)
 

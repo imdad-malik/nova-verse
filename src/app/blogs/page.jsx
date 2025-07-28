@@ -4,6 +4,24 @@ import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
 
 const blogs = [
+   //3rd Article on dated 28 july 2025 E-commerce SEO Marketing
+  {
+    id: 3,
+    title: "E-commerce SEO Marketing: Complete 2025",
+    slug: "e-commerce-seo-marketing",
+    excerpt:
+      "Master e-commerce SEO marketing with proven techniques, strategies, and expert tips to increase organic traffic and drive sales in 2025. Complete guide with real-world examples.",
+    image: "https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg",
+  }, 
+  //2nd Article on dated 23 july 2025 AI Powered SEO
+  {
+    id: 2,
+    title: "AI SEO & Ecommerce Marketing Guide 2025 | Expert Strategies",
+    slug: "ai-seo-ecommerce-2025",
+    excerpt:
+      "Discover cutting-edge AI SEO tools and ecommerce marketing strategies that drive results. Expert insights on search optimization, PPC, and digital growth tactics.",
+    image: "https://images.pexels.com/photos/5614119/pexels-photo-5614119.jpeg",
+  },
   //1st Article on dated 22 july 2025 ai transforming SEO
   {
     id: 1,
@@ -14,15 +32,6 @@ const blogs = [
     image: "https://images.pexels.com/photos/6153343/pexels-photo-6153343.jpeg",
   },
   
- //2nd Article on dated 23 july 2025 AI Powered SEO
-  {
-    id: 2,
-    title: "AI SEO & Ecommerce Marketing Guide 2025 | Expert Strategies",
-    slug: "ai-seo-ecommerce-2025",
-    excerpt:
-      "Discover cutting-edge AI SEO tools and ecommerce marketing strategies that drive results. Expert insights on search optimization, PPC, and digital growth tactics.",
-    image: "https://images.pexels.com/photos/5614119/pexels-photo-5614119.jpeg",
-  },
 ];
 
 export default function BlogsPage() {
