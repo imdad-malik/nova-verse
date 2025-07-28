@@ -1,28 +1,36 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
 export default function BlogPostClient({ title, description, image, content }) {
+  const [currentUrl, setCurrentUrl] = useState("");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setCurrentUrl(window.location.href);
+    }
+  }, []);
+
   const socialPlatforms = [
     {
       name: "Facebook",
       icon: "/icons/facebook.svg",
-      url: `https://www.facebook.com/sharer/sharer.php?u=${typeof window !== "undefined" ? window.location.href : ""}`,
+      url: `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`,
     },
     {
       name: "Twitter",
       icon: "/icons/twitter.svg",
-      url: `https://twitter.com/intent/tweet?url=${typeof window !== "undefined" ? window.location.href : ""}&text=${title}`,
+      url: `https://twitter.com/intent/tweet?url=${currentUrl}&text=${title}`,
     },
     {
       name: "LinkedIn",
       icon: "/icons/linkedin.svg",
-      url: `https://www.linkedin.com/shareArticle?mini=true&url=${typeof window !== "undefined" ? window.location.href : ""}`,
+      url: `https://www.linkedin.com/shareArticle?mini=true&url=${currentUrl}`,
     },
     {
       name: "WhatsApp",
       icon: "/icons/whatsapp.svg",
-      url: `https://wa.me/?text=${typeof window !== "undefined" ? window.location.href : ""}`,
+      url: `https://wa.me/?text=${currentUrl}`,
     },
   ];
 
@@ -30,7 +38,7 @@ export default function BlogPostClient({ title, description, image, content }) {
     <div className="max-w-4xl mx-auto px-4 py-12">
       <h1 className="text-4xl font-bold mb-4">{title}</h1>
       <p className="text-lg text-gray-500 dark:text-gray-300 mb-6">{description}</p>
-      
+
       {image && (
         <Image
           src={image}
@@ -41,13 +49,11 @@ export default function BlogPostClient({ title, description, image, content }) {
         />
       )}
 
-      {/* Article Content */}
       <div
         className="prose max-w-none prose-img:rounded-md prose-a:text-blue-600 dark:prose-invert prose-video:w-full prose-video:h-auto"
         dangerouslySetInnerHTML={{ __html: content }}
       />
 
-      {/* Social Share Icons */}
       <div className="mt-10">
         <h3 className="text-xl font-semibold mb-3">Share this article:</h3>
         <div className="flex space-x-4">

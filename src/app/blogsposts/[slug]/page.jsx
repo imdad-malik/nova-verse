@@ -12,7 +12,7 @@ import rehypeRaw from "rehype-raw";
 import rehypeStringify from "rehype-stringify";
 import BlogPostClient from "@/components/ui/BlogPostClient";
 
-
+// ✅ This will pre-render all blog posts at build time
 export async function generateStaticParams() {
   const postsDir = path.join(process.cwd(), "src/content");
   const filenames = fs.readdirSync(postsDir);
@@ -22,6 +22,7 @@ export async function generateStaticParams() {
   }));
 }
 
+// ✅ Metadata for SEO
 export async function generateMetadata({ params }) {
   const filePath = path.join(process.cwd(), `src/content/${params.slug}.md`);
   if (!fs.existsSync(filePath)) return {};
@@ -46,6 +47,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
+// ✅ Render the blog post content
 export default async function BlogPost({ params }) {
   const { slug } = params;
   const filePath = path.join(process.cwd(), `src/content/${slug}.md`);
@@ -54,7 +56,6 @@ export default async function BlogPost({ params }) {
   const fileContent = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(fileContent);
 
-  // Markdown to HTML with support for raw HTML, tables, GFM, etc.
   const processedContent = await unified()
     .use(remarkParse)
     .use(remarkGfm)
@@ -71,6 +72,7 @@ export default async function BlogPost({ params }) {
         title={data.title}
         description={data.description}
         image={data.image}
+        date={data.date}
         content={contentHtml}
       />
     </main>
