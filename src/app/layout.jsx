@@ -3,7 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
 import { ThemeProvider } from "@/components/ui/theme-provider";
-import Script from "next/script"; // ✅ Correct Script import
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,24 +23,26 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        {/* ✅ Google Analytics GA4 script - MUST use Script component in Next.js */}
+      <head />
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
+      >
+        {/* ✅ GA4 Script for Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-240L7V6V1B"
           strategy="afterInteractive"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="gtag-init" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-240L7V6V1B');
+            gtag('config', 'G-240L7V6V1B', {
+              page_path: window.location.pathname,
+            });
           `}
         </Script>
-      </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
-      >
+
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
