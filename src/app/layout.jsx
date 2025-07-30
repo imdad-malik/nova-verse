@@ -3,7 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
 import { ThemeProvider } from "@/components/ui/theme-provider";
-import Script from "next/script"; // ✅ Import Script component
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* ✅ Google Analytics GA4 via next/script */}
+        {/* Google Analytics GA4 script via next/script */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-240L7V6V1B"
           strategy="afterInteractive"
