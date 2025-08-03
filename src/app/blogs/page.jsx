@@ -4,6 +4,15 @@ import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
 
 const blogs = [
+     //4th Article on dated 03 Augest 2025 E-commerce SEO Marketing
+  {
+    id: 4,
+    title: "How to Use AEO & GEO to Get Featured in Google SGE and ChatGPT Answers (2025 Guide)",
+    slug: "aeo-geo-google-sge",
+    excerpt:
+      "Master AEO & GEO strategies to dominate Google SGE and ChatGPT answers. Complete blueprint for Answer Engine Optimization and Generative Engine Optimization success.",
+    image: "https://images.pexels.com/photos/4126712/pexels-photo-4126712.jpeg",
+  }, 
    //3rd Article on dated 28 july 2025 E-commerce SEO Marketing
   {
     id: 3,
