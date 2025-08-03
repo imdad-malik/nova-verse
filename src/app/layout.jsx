@@ -18,6 +18,9 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "TechNovaVista Blogs",
   description: "TechNovaVista Blogs - Your Source for Tech Insights",
+  icons: {
+    icon: "/icons/favicon.ico",
+  },
   other: {
     "google-site-verification": "gWGy1TrUhldnJ8Q9M1mi4jd3JlD4Nf7fWurShxDG0i0",
   },
@@ -26,7 +29,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >
