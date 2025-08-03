@@ -18,6 +18,9 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "TechNovaVista Blogs",
   description: "TechNovaVista Blogs - Your Source for Tech Insights",
+  other: {
+    "google-site-verification": "gWGy1TrUhldnJ8Q9M1mi4jd3JlD4Nf7fWurShxDG0i0",
+  },
 };
 
 export default function RootLayout({ children }) {
