@@ -17,7 +17,7 @@ author: "Imdad Malik | AI SEO Expert | TechNovaVista"
     "@type": "Person",
     "name": "Imdad Malik",
     "jobTitle": "AI SEO Expert",
-    "url": "https://technovavista.com/"
+    "url": "https://article.technovavista.com/"
   },
   "publisher": {
     "@type": "Organization",
@@ -31,7 +31,7 @@ author: "Imdad Malik | AI SEO Expert | TechNovaVista"
   "dateModified": "2025-08-03",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://article.technovavista.com/blogsposts/aeo-geo-google-sge-chatgpt-optimization-2025"
+    "@id": "https://article.technovavista.com/blogsposts/aeo-geo-google-sge"
   }
 }
 </script>
